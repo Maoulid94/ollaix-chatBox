@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: nord --default, dracula --prefersdark;
+}
+@plugin "@tailwindcss/typography";
+
+.chat {
+  .list-inside {
+    list-style-position: unset;
+  }
+  img {
+    border-radius: 10px;
+  }
+}
+
+.chat-start .chat-bubble {
+  @media (max-width: 720px) {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+  }
+}
+
+.chat-end:hover > .chat-footer {
+  visibility: visible;
+}
+
+.prose {
+  :root & {
+    :where(code):not(pre > code) {
+      border-radius: 4px !important;
+    }
+  }
+}
+pre {
+  padding: 2px;
+  background-color: transparent;
+  code {
+    background-color: transparent;
+    padding-inline: 0 !important;
+    border: none !important;
+  }
+}
